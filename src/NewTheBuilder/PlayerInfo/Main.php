@@ -2,8 +2,6 @@
 
 namespace NewTheBuilder\PlayerInfo;
 
-use JetBrains\PhpStorm\Pure;
-use NewTheBuilder\PlayerInfo\API\PlayerInfoAPI;
 use NewTheBuilder\PlayerInfo\Command\PlayerInfoCommand;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
@@ -15,7 +13,6 @@ class Main extends PluginBase implements Listener {
     protected function onEnable(): void {
         //Listener
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         //Command
         $this->getServer()->getCommandMap()->register("PlayerInfo", new PlayerInfoCommand());
         //Config
@@ -28,10 +25,6 @@ class Main extends PluginBase implements Listener {
 
     public static function getInstance() : Main {
         return self::$main;
-    }
-
-    #[Pure] public function getPlayerInfoAPI() : PlayerInfoAPI {
-        return new PlayerInfoAPI();
     }
 
 }
