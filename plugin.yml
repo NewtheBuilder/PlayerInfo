@@ -1,0 +1,12 @@
+name: PlayerInfo
+version: 1.0.0
+main: NewTheBuilder\PlayerInfo\Main
+api: 4.0.0
+author: NewTheBuilder
+softdepend:
+  - EconomyAPI
+  - PurePerms
+permissions:
+  playerinfo.command.use:
+    default: op
+    description: "Allow accès to /playerinfo command."
